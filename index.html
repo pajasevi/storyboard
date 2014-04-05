@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            <script>window.html5 || document.write('<script src="js/vendor/html5shiv.js"><\/script>')</script>
+        <![endif]-->
+    </head>
+    <body>
+
+        <div style="text-align: center">
+            <a href="" class="play">PLAY</a>
+        </div>
+
+        <div class="bg-wrap">
+            <div class="clocks-bg"></div>
+            <div class="clocks-bg-fgp" data-1000="opacity: 0;" data-1500="opacity: 1;"></div>
+        </div>
+
+        <div class="clocks-wrap">
+            <div class="clock clock1" data-1500="opacity: 0;" data-2000="opacity: 1;"  data-2500="opacity: 0;"></div>
+            <div class="clock clock2" data-2500="opacity: 0;" data-3000="opacity: 1;"  data-3500="opacity: 0;"></div>
+            <div class="clock clock3" data-3500="opacity: 0;" data-4000="opacity: 1;"  data-4500="opacity: 0;"></div>
+            <div class="clock clock4" data-4500="opacity: 0;" data-5000="opacity: 1;"  data-5500="opacity: 0;"></div>
+        </div>
+
+        <div class="start-overlay" data-0="transform: translatex(0px)" data-1000="transform: translatex(2000px)"></div>
+        <div class="end-overlay" data-5500="transform: translatex(-100%)" data-6000="transform: translatex(0)"></div>
+
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+        <script type="text/javascript" src="js/vendor/skrollr.min.js"></script>
+        <script type="text/javascript">
+            var s = skrollr.init({
+                smoothScrolling: true
+            });
+
+            $(".play").click(function(){
+                $("html, body").animate({ scrollTop: $(document).height() }, 15000);
+                return false;
+            });
+        </script>
+    </body>
+</html>
